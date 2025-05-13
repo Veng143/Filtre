@@ -1,0 +1,22 @@
+{
+  "filters": [
+    {
+      "type": "FiltreMajusculeMinuscule",
+      "params": {}
+    },
+    {
+      "type": "FiltreCryptageKey",
+      "params": {
+        "key": "42"
+      }
+    },
+    {
+      "type": "FiltreCryptageAtbash",
+      "params": {}
+    },
+    {
+      "type": "FiltreBitwiseNot",
+      "params": {}
+    }
+  ]
+}

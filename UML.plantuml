@@ -1,0 +1,57 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class Filtre {
+  + Filtre(): 
+  + appliquer(byte[]): byte[]
+  + appliquer(String): String
+}
+class FiltreBitwiseNot {
+  + FiltreBitwiseNot(): 
+  + appliquer(byte[]): byte[]
+  + appliquer(String): String
+}
+class FiltreCryptageAtbash {
+  + FiltreCryptageAtbash(): 
+  + appliquer(String): String
+  + appliquer(byte[]): byte[]
+}
+class FiltreCryptageKey {
+  + FiltreCryptageKey(String): 
+  + appliquer(byte[]): byte[]
+  + appliquer(String): String
+}
+class FiltreDefinition {
+  + FiltreDefinition(): 
+  - params: Map<String, String>
+  - type: String
+   type: String
+   params: Map<String, String>
+}
+class FiltreMajusculeMinuscule {
+  + FiltreMajusculeMinuscule(): 
+  + appliquer(byte[]): byte[]
+  + appliquer(String): String
+}
+class GestionFichiers {
+  + GestionFichiers(): 
+  + ecrireFichier(String, byte[]): void
+  + lireFichier(String): byte[]
+}
+class Main {
+  + Main(): 
+  + main(String[]): void
+}
+
+FiltreBitwiseNot          -[#000082,plain]-^  Filtre                   
+FiltreCryptageAtbash      -[#000082,plain]-^  Filtre                   
+FiltreCryptageKey         -[#000082,plain]-^  Filtre                   
+FiltreMajusculeMinuscule  -[#000082,plain]-^  Filtre                   
+Main                      -[#595959,dashed]->  FiltreBitwiseNot         : "«Initialise»"
+Main                      -[#595959,dashed]->  FiltreCryptageAtbash     : "«Initialise»"
+Main                      -[#595959,dashed]->  FiltreCryptageKey        : "«Initialise»"
+Main                      -[#595959,dashed]->  FiltreMajusculeMinuscule : "«Initialise»"
+@enduml
